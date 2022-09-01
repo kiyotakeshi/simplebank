@@ -1,0 +1,9 @@
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### custom ###
+.docker/postgres/**
+data/redis/dump.rdb
