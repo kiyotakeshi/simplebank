@@ -13,4 +13,7 @@ migrate-down:
 sqlc:
 	sqlc generate
 
+test:
+	go test -v -cover ./...
+
 .PHONY: postgres-up postgres-down migrate-up migrate-down sqlc
