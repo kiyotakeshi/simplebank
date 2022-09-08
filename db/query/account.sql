@@ -8,6 +8,12 @@ VALUES ($1, $2, $3) RETURNING *;
 SELECT * FROM accounts
 WHERE id = $1 LIMIT 1;
 
+-- name: GetAccountForUpdate :one
+SELECT * FROM accounts
+WHERE id = $1 LIMIT 1
+-- no key tell Postgres that we don't update the key, or ID column
+FOR NO KEY UPDATE;
+
 -- name: ListAccounts :many
 SELECT * FROM accounts
 ORDER BY id
