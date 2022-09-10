@@ -13,3 +13,17 @@ services:
       POSTGRES_DB: simple-bank
       POSTGRES_INITDB_ARGS: "--encoding=UTF-8"
     restart: always
+
+  mysql:
+    image: mysql:8.0.23
+    platform: linux/amd64
+    container_name: sample-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: simple-bank
+      TZ: 'Asia/Tokyo'
+    volumes:
+      - ./.docker/mysql/data:/var/lib/mysql
+      - ./.docker/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+    ports:
+      - 3306:3306
