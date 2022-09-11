@@ -16,4 +16,7 @@ sqlc:
 test:
 	go test -v -cover ./...
 
-.PHONY: postgres-up postgres-down migrate-up migrate-down sqlc
+server:
+	go run main.go
+
+.PHONY: migrate-up migrate-down migrate-up-mysql migrate-down-mysql sqlc test server
