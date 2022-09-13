@@ -10,3 +10,5 @@ packages:
     emit_prepared_queries: false
     emit_interface: false
     emit_exact_table_names: false
+    # https://docs.sqlc.dev/en/stable/reference/config.html?highlight=empty_slices#version-1
+    emit_empty_slices: true
