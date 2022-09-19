@@ -19,4 +19,7 @@ test:
 server:
 	go run main.go
 
+mock:
+	mockgen -build_flags=--mod=mod -package mockdb -destination db/mock/store.go github.com/kiyotakeshi/simplebank/db/sqlc Store
+
 .PHONY: migrate-up migrate-down migrate-up-mysql migrate-down-mysql sqlc test server
