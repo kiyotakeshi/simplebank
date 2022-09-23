@@ -10,7 +10,7 @@ import (
 type createAccountRequest struct {
 	Owner string `json:"owner" binding:"required"`
 	// @see https://pkg.go.dev/github.com/go-playground/validator#hdr-One_Of
-	Currency string `json:"currency" binding:"required,oneof=USD EUR JPY"`
+	Currency string `json:"currency" binding:"required,currency"`
 }
 
 func (server Server) createAccount(ctx *gin.Context) {
