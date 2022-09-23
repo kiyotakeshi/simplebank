@@ -16,3 +16,7 @@ $ migrate -path db/migration -database "postgresql://postgres:password@localhost
 2022/08/31 08:43:49 Finished after 264.348709ms
 2022/08/31 08:43:49 Closing source and database
 ```
+
+```shell
+$ migrate create -ext sql -dir db/migration -seq add_users
+```
